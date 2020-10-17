@@ -103,7 +103,7 @@ public class Dictionary {
     public void openAddWordDialog() {
         try {
             sw = new Word();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/fxml/AddDictionary.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AddDictionary.fxml"));
             Parent parent = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Add New Word");
@@ -128,7 +128,7 @@ public class Dictionary {
                 }
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/fxml/AddDictionary.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AddDictionary.fxml"));
             Parent parent = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Edit New Word");
