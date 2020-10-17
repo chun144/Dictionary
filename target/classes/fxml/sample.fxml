@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="395.0" prefWidth="462.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApplication.Dictionary">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="395.0" prefWidth="450.0">
+         <children>
+            <Button fx:id="btnSearch" layoutX="143.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="25.0" prefWidth="64.0" text="Search" />
+            <Label layoutX="169.0" layoutY="8.0" text="Dictionary Ver 1.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="51.0" prefHeight="25.0" prefWidth="124.0" />
+            <ListView fx:id="wordList" layoutX="10.0" layoutY="117.0" onMouseClicked="#explainWord" prefHeight="234.0" prefWidth="198.0" />
+            <TextArea fx:id="result" editable="false" layoutX="221.0" layoutY="51.0" prefHeight="329.0" prefWidth="220.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="btnAddWord" layoutX="14.0" layoutY="85.0" mnemonicParsing="false" onAction="#openAddWordDialog" prefHeight="25.0" prefWidth="64.0" text="Add" />
+            <Button fx:id="btnDeleteWord" layoutX="144.0" layoutY="85.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="25.0" prefWidth="64.0" text="Delete" />
+            <Button fx:id="btnEditWord" layoutX="85.0" layoutY="85.0" mnemonicParsing="false" onAction="#openEditWordDialog" prefHeight="25.0" prefWidth="53.0" text="Edit" />
+            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#reloadData" text="Refresh" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
