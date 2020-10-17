@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="395.0" prefWidth="462.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApplication.Dictionary">
+<GridPane style="-fx-background-color: skyblue" alignment="center" hgap="10" prefHeight="395.0" prefWidth="462.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApplication.Dictionary">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
