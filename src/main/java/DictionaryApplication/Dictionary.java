@@ -92,7 +92,7 @@ public class Dictionary {
 
         ObservableList<String> list = FXCollections.observableArrayList();
         for (Word word: dictionaryList) {
-            if (word.getWord_target().toLowerCase().contains(searchKey.toLowerCase())) {
+            if (word.getWord_target().toLowerCase().startsWith(searchKey.toLowerCase())) {
                 list.add(word.getWord_target());
             }
         }

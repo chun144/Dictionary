@@ -51,7 +51,7 @@ public class DictionaryCommandLine {
         System.out.print("Enter the search word: ");
         String searchKey = sc.nextLine();
         for (Word word : list) {
-            if (word.getWord_target().toLowerCase().indexOf(searchKey.toLowerCase()) == 0) {
+            if (word.getWord_target().toLowerCase().startsWith(searchKey.toLowerCase())) {
                 resultList.add(word.getWord_target());
             }
         }
