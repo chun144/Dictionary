@@ -220,4 +220,31 @@ public class Dictionary {
             e.printStackTrace();
         }
     }
+
+    public int binarySearch()
+    {
+        String w = txtSearch.getText().trim();
+        int l = 0;
+        int r = dictionaryList.size() - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            int res = w.compareTo(dictionaryList.get(m).getWord_target());
+            if (res == 0) {
+                return m;
+            } else if (res > 0) {
+                l = m + 1;
+            } else {
+                r = m - 1;
+            }
+        }
+        return -1;
+    }
+
+    public void searchWord2(ActionEvent event) {
+        int t = binarySearch();
+        if (t != -1) {
+            result.setText(dictionaryList.get(t).getWord_target() + " (" + dictionaryList.get(t).getWord_type() + ") \n/"
+                    + dictionaryList.get(t).getWord_pronunciation() + "/\n\n" + dictionaryList.get(t).getWord_explain());
+        }
+    }
 }
