@@ -14,15 +14,15 @@
    <children>
       <Pane prefHeight="395.0" prefWidth="450.0">
          <children>
-            <Button fx:id="btnSearch" layoutX="143.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchWord2" prefHeight="25.0" prefWidth="64.0" text="Search" />
-            <Label layoutX="169.0" layoutY="8.0" text="Dictionary Ver 1.0">
+            <Button fx:id="btnSearch" layoutX="221.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchWord2" prefHeight="25.0" prefWidth="64.0" text="Search" />
+            <Label layoutX="177.0" layoutY="8.0" text="Dictionary ">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="51.0" onAction="#searchWord" prefHeight="25.0" prefWidth="124.0" />
+            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="51.0" onAction="#searchWord" prefHeight="25.0" prefWidth="192.0" />
             <ListView fx:id="wordList" layoutX="10.0" layoutY="117.0" onMouseClicked="#explainWord" prefHeight="234.0" prefWidth="198.0" />
-            <TextArea fx:id="result" editable="false" layoutX="221.0" layoutY="51.0" prefHeight="329.0" prefWidth="220.0">
+            <TextArea fx:id="result" editable="false" layoutX="221.0" layoutY="87.0" prefHeight="293.0" prefWidth="220.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -32,6 +32,7 @@
             <Button fx:id="btnEditWord" layoutX="85.0" layoutY="85.0" mnemonicParsing="false" onAction="#openEditWordDialog" prefHeight="25.0" prefWidth="53.0" text="Edit" />
             <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#reloadData" text="Refresh" />
             <Button layoutX="76.0" layoutY="356.0" mnemonicParsing="false" onAction="#dictionaryExportToFile2" prefHeight="25.0" prefWidth="56.0" text="Export" />
+            <Button layoutX="298.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchAPI" prefHeight="25.0" prefWidth="56.0" text="API" />
          </children>
       </Pane>
    </children>

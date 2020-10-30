@@ -1,5 +1,6 @@
 package DictionaryApplication;
 
+import DictionaryCommandLine.Translator;
 import DictionaryCommandLine.Word;
 
 import javafx.collections.FXCollections;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import java.io.IOException;
+
 public class Dictionary {
     public static List<Word> dictionaryList = new ArrayList<>();
     private final String path = "./data/Dictionary.txt";
@@ -31,6 +34,7 @@ public class Dictionary {
     private ListView wordList;
     @FXML
     private TextArea result;
+    private Translator translator = new Translator();
 
     public void initialize() {
         getData();
@@ -245,6 +249,21 @@ public class Dictionary {
         if (t != -1) {
             result.setText(dictionaryList.get(t).getWord_target() + " (" + dictionaryList.get(t).getWord_type() + ") \n/"
                     + dictionaryList.get(t).getWord_pronunciation() + "/\n\n" + dictionaryList.get(t).getWord_explain());
+        }
+    }
+
+    public void searchAPI(ActionEvent event) throws IOException{
+        String searchKey = txtSearch.getText().trim();
+        if (!searchKey.isEmpty()) {
+            String text = "";
+            try {
+                text = (String) translator.translate("en", "vi", searchKey);
+                if (!searchKey.equals(text)) {
+                    result.setText(searchKey + "\t" + "\n" + text);
+                }
+            } catch (Exception e) {
+                result.setText("Xin Lỗi!\nKhông tìm thấy từ này. Xin bạn kiểm tra lại chính tả.");
+            }
         }
     }
 }
