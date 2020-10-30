@@ -1,7 +1,6 @@
 package DictionaryApplication;
 
 import DictionaryCommandLine.DictionaryManagement;
-import DictionaryCommandLine.Translator;
 import DictionaryCommandLine.Word;
 
 import javafx.collections.FXCollections;
@@ -35,7 +34,7 @@ public class Dictionary {
     private ListView wordList;
     @FXML
     private TextArea result;
-    private Translator translator = new Translator();
+    private DictionaryManagement translator = new DictionaryManagement();
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public void initialize() {
