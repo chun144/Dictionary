@@ -14,8 +14,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -167,7 +166,7 @@ public class Dictionary {
         for (Word word : dictionaryList) {
             if (word.getWord_target().equalsIgnoreCase(target)) {
                 StringBuilder display = new StringBuilder();
-                display.append(word.getWord_target() + " (" + word.getWord_type() + ")\n");
+                display.append(word.getWord_target() + "\t" + "(" + word.getWord_type() + ")\n");
                 if (word.getWord_pronunciation() != null && !word.getWord_pronunciation().isEmpty()) {
                     display.append("/" + word.getWord_pronunciation() + "/\n\n");
                 } else {
@@ -192,5 +191,33 @@ public class Dictionary {
 
     public void setDataToListView(ObservableList<String> list) {
         wordList.setItems(list.sorted());
+    }
+
+    public void dictionaryExportToFile2(ActionEvent event) {
+        try {
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "utf-8"));
+            for (Word word : dictionaryList) {
+                try {
+                    if (word.getWord_type() == null) {
+                        word.setWord_type(" ");
+                    }
+                    if (word.getWord_pronunciation() == null) {
+                        word.setWord_pronunciation(" ");
+                    }
+                    if (word.getWord_explain() == null) {
+                        word.setWord_explain(" ");
+                    }
+                    String dictionary = word.getWord_target() + "\t" + word.getWord_type() + " /" + word.getWord_pronunciation() + "/ " + word.getWord_explain() + "\n";
+                    writer.write(dictionary);
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+            writer.close();
+            System.out.println("Export to txt file successfully!");
+        } catch (IOException e) {
+            System.out.println("Can not find this directory!");
+            e.printStackTrace();
+        }
     }
 }
