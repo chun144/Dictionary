@@ -1,5 +1,6 @@
 package DictionaryApplication;
 
+import DictionaryCommandLine.DictionaryManagement;
 import DictionaryCommandLine.Translator;
 import DictionaryCommandLine.Word;
 
@@ -35,6 +36,7 @@ public class Dictionary {
     @FXML
     private TextArea result;
     private Translator translator = new Translator();
+    private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public void initialize() {
         getData();
@@ -265,5 +267,18 @@ public class Dictionary {
                 result.setText("Xin Lỗi!\nKhông tìm thấy từ này. Xin bạn kiểm tra lại chính tả.");
             }
         }
+    }
+
+    public void speak(ActionEvent event) {
+        String text = result.getText();
+        if (!text.trim().isEmpty()) {
+            for (int i = 0; i < text.length(); i++) {
+                if (text.charAt(i) == '\t') {
+                    dictionaryManagement.speech(text.substring(0, i));
+                    break;
+                }
+            }
+        }
+
     }
 }

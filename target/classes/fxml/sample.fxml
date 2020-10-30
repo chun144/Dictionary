@@ -32,7 +32,8 @@
             <Button fx:id="btnEditWord" layoutX="85.0" layoutY="85.0" mnemonicParsing="false" onAction="#openEditWordDialog" prefHeight="25.0" prefWidth="53.0" text="Edit" />
             <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#reloadData" text="Refresh" />
             <Button layoutX="76.0" layoutY="356.0" mnemonicParsing="false" onAction="#dictionaryExportToFile2" prefHeight="25.0" prefWidth="56.0" text="Export" />
-            <Button layoutX="298.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchAPI" prefHeight="25.0" prefWidth="56.0" text="API" />
+            <Button layoutX="298.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchAPI" prefHeight="25.0" prefWidth="64.0" text="API" />
+            <Button layoutX="371.0" layoutY="51.0" mnemonicParsing="false" onAction="#speak" prefHeight="25.0" prefWidth="64.0" text="Speak" />
          </children>
       </Pane>
    </children>

@@ -3,6 +3,8 @@ package DictionaryCommandLine;
 import java.io.*;
 import java.util.Scanner;
 import java.util.List;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 public class DictionaryManagement {
     private Scanner scanner;
@@ -96,5 +98,13 @@ public class DictionaryManagement {
             System.out.println("Can not find this directory!");
             e.printStackTrace();
         }
+    }
+
+    public void speech(String text) {
+        VoiceManager voiceManager = VoiceManager.getInstance();
+        Voice syntheticVoice = voiceManager.getVoice("kevin16");
+        syntheticVoice.allocate();
+        syntheticVoice.speak(text);
+        syntheticVoice.deallocate();
     }
 }
